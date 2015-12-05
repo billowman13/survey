@@ -6,7 +6,52 @@ block top-nav
 
 block content
   .container
-  
+    .project_table_Wrapper(style="margin: 10px 40px;")
+      .project_button
+        button(type='button' id='btn_now_survey' class='btn btn-default' ) 진행중인 설문
+        button(type='button' id='btn_past_survey' class='btn btn-default' ) 지난 설문
+      .now_survey
+        h1 진행중인 설문
+        table.table.table-striped.table-hover(border='1' width='980px')
+          tr(align='center')
+            td(width='70px') 번호
+            td(width='300px') 제목
+            td(width='200px') 만든 날짜
+            td(width='200px') 최종 수정 날짜
+            td(width='70px') 응답 수
+            td(width='70px') 수정
+            td(width='70px') 삭제
+          tr(align='center')
+            td(width='70px') 1
+            td(width='300px') 웹프로그래밍
+            td(width='200px') 2015-12-01
+            td(width='200px') 2015-12-04
+            td(width='70px') 25
+            td(width='70px') 버튼
+            td(width='70px') 버튼
+      .past_survey(style='display: none;')
+        h1 지난 설문
+        table.table.table-striped.table-hover(border='1' width='980px')
+          tr(align='center')
+            td(width='70px') 번호
+            td(width='300px') 제목
+            td(width='200px') 만든 날짜
+            td(width='200px') 최종 수정 날짜
+            td(width='70px') 응답 수
+            td(width='70px') 수정
+            td(width='70px') 삭제
+          tr(align='center')
+            td(width='70px') 1ouljk,
+            td(width='300px') 웹프로그래밍
+            td(width='200px') 2015-12-01
+            td(width='200px') 2015-12-04
+            td(width='70px') 25
+            td(width='70px') 버튼
+            td(width='70px') 버튼
 
 block footer
   include ./includes/footer
+
+
+
+script(type='text/javascript', src='/javascripts/surveylist.js')        
