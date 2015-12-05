@@ -1,0 +1,27 @@
+block header
+  include ./includes/header
+
+block top-nav
+  include ./includes/topnav
+
+block content
+  .container
+    form.form-horizontal(action='/login', method='POST')
+      fieldset
+        legend
+          h2 LOGIN
+        .form-group
+          label(for='inputid', class='col-sm-4 control-label') ID
+          input(type='text', class='col-sm-5 form-control', style='width:200px;', name='id', placeholder='id')
+        .form-group
+          label(for='inputPassword', class='col-sm-4 control-label') PW
+          input(type='password', class='col-sm-5 form-control' style='width:200px;', name='password', placeholder='password')
+        .form-group
+          label(class='col-sm-2 control-label')
+          button.btn.btn-primary(type='submit') 로그인
+          label(class='col-sm-1 control-label')
+          a.btn.btn-default(href='/users/signup') 회원가입
+          label(class='col-sm-1 control-label')
+
+block footer
+  include ./includes/footer

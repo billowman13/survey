@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var survey = require('./routes/survey');
 
 var app = express();
 
@@ -16,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // mongodb connect
-mongoose.connect('mongodb://users:users@ds045064.mongolab.com:45064/pdhdb');
+mongoose.connect('mongodb://surveyDB:a@ds045064.mongolab.com:45064/pdhdb');
 mongoose.connection.on('error', console.log);
 
 // uncomment after placing your favicon in /public
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/survey', survey);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
